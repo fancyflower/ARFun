@@ -60,10 +60,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        print("added")
         if let plane = anchor as? ARPlaneAnchor {
             print("x: \(plane.extent.x)m Z: \(plane.extent.x)m")
         }
     }
-   
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        if let plane = anchor as? ARPlaneAnchor {
+            print("x: \(plane.extent.x)m Z: \(plane.extent.x)m")
+        }
+    }
+    
 }
